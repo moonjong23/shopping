@@ -136,4 +136,39 @@ public class MemberMgr {
 		return b;
 	}
 	
+	public MemberBean getMember(String id){
+		MemberBean bean = null;
+		
+		try {
+			conn=ds.getConnection();
+			String sql="select * from member where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				bean = new MemberBean();
+				bean.setId(rs.getString("id"));
+				bean.setPasswd(rs.getString("passwd"));
+				bean.setName(rs.getString("name"));
+				bean.setEmail(rs.getString("email"));
+				bean.setPhone(rs.getString("phone"));
+				bean.setZipcode(rs.getString("zipcode"));
+				bean.setAddress(rs.getString("address"));
+				bean.setJob(rs.getString("job"));
+				
+			}
+		}catch (Exception e) {
+			System.out.println("getMember err: " + e);
+		}finally{
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return bean;
+	}
+	
 }//MemberMgr 끝

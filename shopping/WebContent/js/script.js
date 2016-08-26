@@ -16,8 +16,20 @@ function idCheck(){
 	}
 }
 
-function inputCheck(){
-	//입력자료 오류검사
+function inputCheck(){ //입력자료 오류검사(생략)
 	
 	document.regForm.submit();
+}
+
+/*쇼핑몰 로그인 후 자신의 정보 수정 시*/
+function memberUpdate(){ //입력자료 오류검사 (생략)
+	document.updateForm.submit();
+}
+
+function memberUpdateCancel(){
+	location.href="../guest/guest_index.jsp";
+}
+
+function memberDelete(){
+	alert("회원 탈퇴는 죽음을 부름!!!");
 }

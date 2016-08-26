@@ -11,6 +11,7 @@
 window.onload = function(){
 	document.getElementById("btnLogin").addEventListener("click", funcLogin, false);
 	document.getElementById("btnNewMember").addEventListener("click", funcNew, false);
+	document.getElementById("btnHome").addEventListener("click", funcHome, false);
 }
 
 function funcLogin(){
@@ -29,9 +30,14 @@ function funcLogin(){
 }
 
 function funcNew(){
-
-	location.href = "register.jsp";
+	location.href = "../member/register.jsp";
 }
+
+function funcHome(){
+	location.href = "guest_index.jsp";
+}
+
+
 
 </script>
 </head>
@@ -63,6 +69,7 @@ if(id !=null){
 		<td colspan="2">
 		<input type="button" value="로 그 인" id="btnLogin">
 		<input type="button" value="회원가입" id="btnNewMember">
+		<input type="button" value="홈페이지" id="btnHome">
 		</td>
 	</tr>
 </table>

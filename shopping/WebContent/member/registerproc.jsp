@@ -21,7 +21,7 @@ boolean b = memberMgr.memberInsert(memberBean);
 <%
 if(b){
 	out.println("<b>회원 가입을 축하합니다</b><br/>");
-	out.println("<a href='login.jsp'>로그인</a>");
+	out.println("<a href='../guest/login.jsp'>로그인</a>");
 }else{
 	out.println("<b>회원 가입 실패! 관리자에게 문의하세요.</b><br/>");
 	out.println("<a href='register.jsp'>다시 가입하기</a>");

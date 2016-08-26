@@ -34,7 +34,7 @@ window.onload = function(){
 <table>
 	<tr>
 		<td>
-			[<a href="../index.jsp">메인으로</a>]&nbsp;
+			[<a href="../guest/guest_index.jsp">메인으로</a>]&nbsp;
 			[<a href="boardlist.jsp?page=1">최신목록</a>]&nbsp;
 			[<a href="boardwrite.jsp">새 글 작성</a>]&nbsp;
 			[<a href="#" onclick="window.open('admin.jsp' ,' ' ,'width=300, height=150, top=200, left=300')">관리자용</a>]&nbsp;
@@ -64,7 +64,7 @@ window.onload = function(){
 			for(BoardDto i : list){
 				//댓글 들여쓰기 준비--------------
 				int nst = i.getNested();
-				System.out.println("dto에서 꺼낸 nested: " + nst);
+				//System.out.println("dto에서 꺼낸 nested: " + nst);
 				String tab = "";
 				String icon = "";
 				for(int k=0; k <nst; k++){

@@ -9,7 +9,7 @@ boolean b = memberMgr.loginCheck(id, passwd);
 
 if(b == true){
 	session.setAttribute("idKey", id);
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("guest_index.jsp");
 }else{
 	response.sendRedirect("loginfail.jsp");
 }
