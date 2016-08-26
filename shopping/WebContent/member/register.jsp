@@ -8,9 +8,9 @@
 <script type="text/javascript">
 window.onload = function(){
 	regForm.id.focus();
-	document.getElementById("btnZip").zipCheck;
-	document.getElementById("btnId").idCheck;
-	document.getElementById("btnSubmit").inputCheck;
+	document.getElementById("btnZip").onclick = zipCheck;
+	document.getElementById("btnId").onclick = idCheck;
+	document.getElementById("btnSubmit").onclick = inputCheck;
 }
 </script>
 </head>
