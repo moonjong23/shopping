@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-HOME<p/>
-<a href="board/boardlist.jsp">게시판</a>
-<br>
-<a href="member/register.jsp">회원가입</a>
+
 </body>
 </html>

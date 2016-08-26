@@ -1,3 +1,4 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="shop.board.BoardDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -61,11 +62,21 @@ window.onload = function(){
 			
 			ArrayList<BoardDto> list = boardMgr.getDataAll(spage, stype, sword);
 			for(BoardDto i : list){
+				//댓글 들여쓰기 준비--------------
+				int nst = i.getNested();
+				System.out.println("dto에서 꺼낸 nested: " + nst);
+				String tab = "";
+				String icon = "";
+				for(int k=0; k <nst; k++){
+					tab += "&nbsp;&nbsp;";
+					icon ="<img src='../image/re.gif' />";
+				}
+				//------------------------------
 			%>
 				<tr>
 					<td><%=i.getNum() %></td>
 					<td>
-					<a href="boardcontent.jsp?num=<%=i.getTitle() %>&page=<%=spage %>"><%=i.getTitle() %></a>
+						<%=tab%><%=icon %><a href="boardcontent.jsp?num=<%=i.getNum() %>&page=<%=spage %>"><%=i.getTitle() %></a>
 					</td>
 					<td><%=i.getName() %></td>
 					<td><%=i.getBdate() %></td>
