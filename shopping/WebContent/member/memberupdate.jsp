@@ -1,9 +1,10 @@
 <%@page import="shop.member.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <jsp:useBean id="memberMgr" class="shop.member.MemberMgr"/>
 <%
-request.setCharacterEncoding("utf-8");
+
 String id =(String)session.getAttribute("idKey");
 
 MemberBean bean = memberMgr.getMember(id);
@@ -20,7 +21,7 @@ if(bean == null){
 <script src="../js/script.js"></script>
 <script type="text/javascript">
 window.onload = function(){
-	document.getElementById("btnZip").onclick = zipCheck;
+	document.getElementById("btnZip").onclick = upCheck;
 	document.getElementById("btnUpdate").onclick = memberUpdate;
 	document.getElementById("btnUpdateCancel").onclick = memberUpdateCancel;
 	document.getElementById("btnDelete").onclick = memberDelete;

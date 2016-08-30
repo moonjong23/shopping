@@ -40,18 +40,18 @@ function send(zipcode, area1, area2, area3 ,area4){
 	/* 값을 체크하여 비교하는 팝업창을 띄울 경우 체크 하고난 결과 값을 다시 부모 창으로 돌려줄 때
     " opener.document.폼네임.필드네임.value=값 " 의 형식으로 돌려준다. */
 	//alert(zipcode + " " + area1 + " " + area2 + " " + area3 + " " + area4);
-	//opener.document.updateForm.zipcode.value = zipcode;
-	opener.document.regForm.zipcode.value = zipcode;
+	opener.document.updateForm.zipcode.value = zipcode;
+
 	var addr = area1 + " " + area2 + " " + area3 + " " + area4;
-	//opener.document.updateForm.address.value = addr;
-	opener.document.regForm.address.value = addr;
+	opener.document.updateForm.address.value = addr;
+
 	window.close();
 }
 </script>
 </head>
 <body>
 <h2><b>**우편번호 찾기**</b></h2>
-<form action="zipcheck.jsp" name="zipForm" method="post">
+<form action="upcheck.jsp" name="zipForm" method="post">
 <table>
 	<tr>
 		<td>

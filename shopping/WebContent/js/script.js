@@ -5,6 +5,13 @@ function zipCheck(){
 			+"top=200,left=300,status=yes,scrollbars=yes,menubar=no")
 }
 
+function upCheck(){
+	url="upcheck.jsp?check=y";
+	
+	window.open(url,"up","toolbar=no,width=550,height=500,"
+			+"top=200,left=300,status=yes,scrollbars=yes,menubar=no")
+}
+
 function idCheck(){
 	if(regForm.id.value ==="" ){
 		alert("id를 입력하시오.");
@@ -33,3 +40,49 @@ function memberUpdateCancel(){
 function memberDelete(){
 	alert("회원 탈퇴는 죽음을 부름!!!");
 }
+
+//관리자에서 회원 수정
+function memUpdate(id){
+	//alert(id);
+	document.updateFrm.id.value=id; //updateFrm의 value에 id를 줌
+	document.updateFrm.submit();
+}
+
+function memberUpdateAdmin(){
+	document.updateFormAdmin.submit();
+}
+
+function memberUpdateCancelAdmin(){
+	location.href = "membermanager.jsp";
+}
+
+//관리자에서 상품 처리 시
+function productDetail(no){
+	//alert(no);
+	document.detailFrm.no.value = no;
+	document.detailFrm.submit();
+}
+
+function productUpdate(no){
+	document.updateFrm.no.value = no;
+	document.updateFrm.submit();
+}
+
+function productDelete(no){
+	document.deleteFrm.no.value = no;
+	document.deleteFrm.submit();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
